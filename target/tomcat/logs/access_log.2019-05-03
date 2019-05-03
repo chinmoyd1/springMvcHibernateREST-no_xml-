@@ -3,3 +3,4 @@
 0:0:0:0:0:0:0:1 - - [03/May/2019:20:02:49 +0530] "GET /hibernate/employee/ HTTP/1.1" 500 4804 http-bio-8080-exec-7 11
 0:0:0:0:0:0:0:1 - - [03/May/2019:20:02:56 +0530] "GET /hibernate/employee/ HTTP/1.1" 500 4804 http-bio-8080-exec-8 6
 0:0:0:0:0:0:0:1 - - [03/May/2019:20:03:56 +0530] "GET /hibernate/employee/ HTTP/1.1" 200 957 http-bio-8080-exec-1 686
+0:0:0:0:0:0:0:1 - - [03/May/2019:20:24:28 +0530] "GET /hibernate/employee/ HTTP/1.1" 500 8642 http-bio-8080-exec-1 111

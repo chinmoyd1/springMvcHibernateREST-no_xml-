@@ -14,7 +14,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/employee")
-public class HomeController {
+public class EmployeeController {
 	@Autowired
 	private ManageEmployeeImpl manageEmployee;
 
