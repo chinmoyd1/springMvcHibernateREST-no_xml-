@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [30/Apr/2019:23:57:09 +0530] "GET /hibernate/employee/getAll HTTP/1.1" 400 968 http-bio-8080-exec-1 119
+0:0:0:0:0:0:0:1 - - [30/Apr/2019:23:57:12 +0530] "GET /hibernate/employee/get HTTP/1.1" 400 968 http-bio-8080-exec-2 6
+0:0:0:0:0:0:0:1 - - [30/Apr/2019:23:57:28 +0530] "GET /hibernate/employee/all HTTP/1.1" 200 1077 http-bio-8080-exec-4 500
+0:0:0:0:0:0:0:1 - - [30/Apr/2019:23:57:42 +0530] "GET /hibernate/employee/4 HTTP/1.1" 200 71 http-bio-8080-exec-6 35
+0:0:0:0:0:0:0:1 - - [30/Apr/2019:23:58:15 +0530] "PUT /hibernate/employee/all HTTP/1.1" 405 1045 http-bio-8080-exec-8 5
+0:0:0:0:0:0:0:1 - - [30/Apr/2019:23:59:40 +0530] "PUT /hibernate/employee/4 HTTP/1.1" 200 68 http-bio-8080-exec-1 562

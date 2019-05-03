@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>springHIBERNATE</display-name>
+	<!--Without dispatcher servlet-->
+	<!--
+	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>
+			org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+		</param-value>
+	</context-param>
+	-->
+
+	<!--Every Spring webapp has an associated root application context that is tied to its lifecycle-->
+	<!--The root web application context is managed by a listener of class
+		org.springframework.web.context.ContextLoaderListener, which is part of the spring-web module.-->
+	<!--By default, the listener will load an XML application context from /WEB-INF/applicationContext.xml-->
+	<!--<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>-->
+
+	<servlet>
+		<servlet-name>SpringDispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+
+		<!--Alternative to use annotation based configuration-->
+		<init-param>
+			<!--We can also specify other types of contexts besides the default XML-based one.-->
+			<!--We use the contextClass parameter to tell the listener which type of context to instantiate-->
+			<param-name>contextClass</param-name>
+			<param-value>
+				org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+			</param-value>
+		</init-param>
+
+		<!--Every type of context may have a default configuration location.
+		In our case, the AnnotationConfigWebApplicationContext does not have one, so we have to provide it.-->
+		<!--An alternate location of the XML context configuration with the contextConfigLocation parameter-->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>com.spring.hibernate.config.MvcConfiguration</param-value>
+		</init-param>
+		<!--Or more than one location, separated by commas:-->
+		<!--<context-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/context1.xml, /WEB-INF/context2.xml</param-value>
+		</context-param>-->
+
+
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SpringDispatcher</servlet-name>
+		<url-pattern>/hibernate/*</url-pattern>
+	</servlet-mapping>
+
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+</web-app>
